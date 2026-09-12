@@ -1401,3 +1401,18 @@ console.log(
     "Premium Wedding Photography Website loaded successfully."
 );
 
+
+const heroVideo = document.getElementById("heroVideo");
+const soundToggle = document.getElementById("soundToggle");
+
+if (heroVideo && soundToggle) {
+    soundToggle.addEventListener("click", () => {
+        if (heroVideo.muted) {
+            heroVideo.muted = false;
+            soundToggle.textContent = "🔊 Sound On";
+        } else {
+            heroVideo.muted = true;
+            soundToggle.textContent = "🔇 Sound Off";
+        }
+    });
+}
