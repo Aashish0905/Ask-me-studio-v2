@@ -1416,3 +1416,46 @@ if (heroVideo && soundToggle) {
         }
     });
 }
+
+
+
+
+
+/* =========================================
+   HERO VIDEO SOUND CONTROL
+========================================= */
+
+const heroVideo = document.getElementById("heroVideo");
+const heroSoundBtn = document.getElementById("heroSoundBtn");
+
+if (heroVideo && heroSoundBtn) {
+
+    heroSoundBtn.addEventListener("click", async () => {
+
+        try {
+
+            if (heroVideo.muted) {
+
+                heroVideo.muted = false;
+                heroVideo.volume = 1;
+
+                await heroVideo.play();
+
+                heroSoundBtn.textContent = "🔇 Mute";
+
+            } else {
+
+                heroVideo.muted = true;
+
+                heroSoundBtn.textContent = "🔊 Enable Sound";
+            }
+
+        } catch (error) {
+
+            console.error("Hero video sound error:", error);
+
+        }
+
+    });
+
+}
